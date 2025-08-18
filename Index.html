@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Milestones Countdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 40px;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            text-align: left;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .countdown {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Milestones by November 15, 2025</h1>
+        <ul>
+            <li>Executed a first close by November 15, 2025</li>
+            <li>Raised another USD20mio by November 15, 2025</li>
+            <li>Have a first deal ready by November 15, 2025</li>
+        </ul>
+        <div class="countdown" id="countdown">
+            Loading countdown...
+        </div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date("2025-11-15T00:00:00");
+            const today = new Date();
+            const timeDiff = targetDate.getTime() - today.getTime();
+            const daysRemaining = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+            document.getElementById("countdown").textContent = daysRemaining + " days";
+        }
+
+        window.onload = updateCountdown;
+    </script>
+</body>
+</html>
